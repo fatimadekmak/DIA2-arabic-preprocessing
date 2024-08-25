@@ -66,7 +66,7 @@ This folder contains scripts used to filter out content based on URLs. This step
 Scripts in this subfolder perform filtering based on various metrics such as document length, sentence quality, and Arabic language content. This step is crucial for ensuring the quality of the dataset by removing low-quality and irrelevant content.
 
 **Prerequisites**:
-- Python 3.x
+- Python
 - Libraries: langdetect from PyPi
 - Data Format: The code works with data in parquet format containing the text in a 'text' column. It can be modified as needed.
 
@@ -98,7 +98,7 @@ Output:
 ```
 
 **Prerequisites**:
-- Python 3.x
+- Python
 - Libraries: `camel_tools`, `pandarallel`:The code is parallelized using `pandarallel` to take advantage of multiple CPU cores, speeding up the text processing significantly.
 - Data Format: The code works with data in parquet format containing the text in a 'text' column. It can be modified as needed.
 
@@ -106,7 +106,7 @@ Output:
 The purpose of these scripts is to efficiently detect duplicate texts from large datasets. The process includes creating MinHashes for each document, building LSH indexes, identifying near duplicates, in addition to deduplicating datasets based on duplicate URLs. These techniques are particularly useful when working with massive datasets where traditional deduplication methods would be computationally expensive.
 
 **Prerequisites**:
-- Python 3.x
+- Python
 - Libraries: `pandas`, `datasketch`
 - Data Format: The code works with data in parquet format containing the text in a 'text' column, unique identifier for each text in a 'unique_id' column, and the url in a 'url' column. It can be modified as needed.
 
