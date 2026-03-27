@@ -87,7 +87,8 @@ This subfolder handles the final Arabic text processing and diacritization steps
 ; to ؛
 ```
 - **Unicode Normalization**: Standardizes the text to a consistent Unicode format.
-- **Diacritization**: Adds diacritics to the Arabic text, making it suitable for tasks that require fully diacritized input. This step is done using [the CAMeL Tools' Maximum Likelihood Estimation (MLE) Disambiguator.](https://camel-tools.readthedocs.io/en/latest/api/disambig/mle.html)
+- **Diacritization**: Adds diacritics to the Arabic text using the [CATT (Character-based Arabic Tashkeel Transformer)](https://github.com/abjadai/catt) encoder-only model, selected after a comparative evaluation against [the CAMeL Tools' Maximum Likelihood Estimation (MLE) Disambiguator.](https://camel-tools.readthedocs.io/en/latest/api/disambig/mle.html) (see paper for details).
+- **Pre-diacritization normalization**: Due to model incompatibility, and before diacritization, Persian-origin characters are normalized to MSA equivalents and numeric tokens are expanded to Arabic words using `num2words`. Original digits are then restored post-diacritization via index mapping. Long sequences are chunked at punctuation boundaries to respect the model's 1,024-character limit.
 ```
 Input:
 وأشار وكيل وزارة التربية والتعليم، إلى أن الاختبارات ستمتد اعتبارًا من يوم الأحد 

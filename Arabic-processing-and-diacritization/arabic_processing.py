@@ -5,8 +5,6 @@ import pandas as pd
 import re
 from camel_tools.utils import normalize
 from camel_tools.utils.charsets import AR_CHARSET, AR_LETTERS_CHARSET
-from camel_tools.tokenizers.word import simple_word_tokenize
-from camel_tools.disambig.mle import MLEDisambiguator
 from pandarallel import pandarallel
 
 # Initialize pandarallel
@@ -54,36 +52,14 @@ def normalize_arabic_text(text):
     
     return normalized_text
 
-# Initialize the MLE Disambiguator
-mle = MLEDisambiguator.pretrained()
-
-def add_diacritics(text):
-    """
-    Add diacritics to Arabic text using CAMeL Tools' MLE Disambiguator.
-    """
-    try:
-        global mle
-        lines = text.split('\n')
-        diacritized_lines = []
-        for line in lines:
-            tokenized_text = simple_word_tokenize(line)
-            disambiguated_text = mle.disambiguate(tokenized_text)
-            diacritized_line = ' '.join(
-                [d.analyses[0].analysis['diac'] if d.analyses else '' for d in disambiguated_text]
-            )
-            diacritized_lines.append(diacritized_line)
-        return '\n'.join(diacritized_lines)
-    except Exception as e:
-        print(f"Error processing text: {e}")
-        return text
 
 def preprocess_text(text):
     """
-    Preprocess the Arabic text by cleaning, normalizing, and adding diacritics.
+    Preprocess the Arabic text by cleaning, normalizing.
     """
     text = clean_arabic_text(text)
     text = normalize_arabic_text(text)
-    return add_diacritics(text)
+    return text
 
 def process_parquet_file(input_filepath):
     """
