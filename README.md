@@ -1,6 +1,6 @@
-# DIA Arabic Preprocessing
+# DIA2 Arabic Preprocessing
 
-This repository contains the code used for preprocessing and creating the DIA dataset—a diverse diacritized Arabic dataset suitable for training Large Language Models (LLMs) and other Natural Language Processing (NLP) tasks. The repository is organized into several subfolders, each corresponding to a specific preprocessing step, as illustrated in the flowchart provided. ![Preprocessing Flowchart](/Arabic%20Text%20Preprocessing%20Flowchart.jpeg)
+This repository contains the code used for preprocessing and creating the DIA2 dataset—a diverse diacritized Arabic dataset suitable for training Large Language Models (LLMs) and other Natural Language Processing (NLP) tasks. The repository is organized into several subfolders, each corresponding to a specific preprocessing step, as illustrated in the flowchart provided. ![Preprocessing Flowchart](/Arabic%20Text%20Preprocessing%20Flowchart.jpeg)
 
 ## Table of Contents
 - [Repository Structure](#repository-structure)
