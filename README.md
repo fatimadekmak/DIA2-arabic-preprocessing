@@ -152,3 +152,12 @@ Run this script to remove records with duplicate URLs from your dataset.
 
 ## Citing the Repository
 
+If you use this code in your research, please cite the following paper:
+```bibtex
+@inproceedings{dekmak2026dia2,
+  title     = {DIA2: A Comprehensive and Diverse Diacritized Modern Standard Arabic Corpus for Large-Scale NLP Research},
+  author    = {Dekmak, Fatima and Elbassuoni, Shady and Shaban, Khaled and Hajj, Hazem and El Hajj, Wassim and Abu Adla, Yasmine and Alabrash, Buthaina},
+  booktitle = {Proceedings of the OSACT7 Workshop at LREC-COLING 2026},
+  year      = {2026}
+}
+```
